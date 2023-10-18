@@ -8,3 +8,5 @@ class Fighter {
         this.life = life;
     }
 }
+
+export default Fighter;
