@@ -18,11 +18,15 @@ class Fighter {
             if (defender.life > 0) {
                 if (defender.life - damage <= 0) {
                     if (defender.name === 'Heracles') {
-                        console.log(`\t${chalk.blue(defender.name)} has lost ${damage} life points.\n\t${chalk.blue(defender.name)} has currently ${defender.life} life points left.\n\tSo ${chalk.blue(defender.name)} has died.\n`);
+                        console.log(
+                            `\t${chalk.blue(defender.name)} has lost ${damage} life points.\n\t${chalk.blue(defender.name)} has currently ${defender.life} life points left.\n\tSo ${chalk.blue(defender.name)} has died.\n`
+                            );
                         defender.life = -1;
                     }
                     else {
-                        console.log(`\t${chalk.red(defender.name)} has lost ${damage} life points.\n\t${chalk.red(defender.name)} has currently ${defender.life} life points left.\n\tSo ${chalk.red(defender.name)} has died.\n`);
+                        console.log(
+                            `\t${chalk.red(defender.name)} has lost ${damage} life points.\n\t${chalk.red(defender.name)} has currently ${defender.life} life points left.\n\tSo ${chalk.red(defender.name)} has died.\n`
+                            );
                         defender.life = -1;
                     }
                     defender.life = 0;
@@ -30,10 +34,14 @@ class Fighter {
                 else {
                     defender.life -= damage;
                     if (defender.name === 'Heracles') {
-                        console.log(`\t${chalk.blue(defender.name)} has ${defender.life} life points left.\n\tHe has lost ${damage} life points.\n`);
+                        console.log(
+                            `\t${chalk.blue(defender.name)} has ${defender.life} life points left.\n\tHe has lost ${damage} life points.\n`
+                        );
                     }
                     else {
-                        console.log(`\t${chalk.red(defender.name)} has ${defender.life} life points left.\n\tHe has lost ${damage} life points.\n`);
+                        console.log(
+                            `\t${chalk.red(defender.name)} has ${defender.life} life points left.\n\tHe has lost ${damage} life points.\n`
+                            );
                     }
                 }
             }
@@ -44,13 +52,19 @@ class Fighter {
         else {
             damage = 0;
             if (defender.name === 'Heracles') {
-                console.log(`\t${chalk.blue(defender.name)} has blocked or dodged the attack.\n`);
+                console.log(
+                    `\t${chalk.blue(defender.name)} has blocked or dodged the attack.\n`
+                    );
             }
             else {
-                console.log(`\t${chalk.red(defender.name)} has blocked or dodged the attack.\n`);
+                console.log(
+                    `\t${chalk.red(defender.name)} has blocked or dodged the attack.\n`
+                    );
             }
         }
     }
+
+    // TODO: add a isAlive() method to check if the fighter is still alive
 }
 
 export default Fighter;
